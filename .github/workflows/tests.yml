@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest]
-        python-version: ['3.x', '3.8']
+        python-version: ['3.x', '3.9']
     
     runs-on: ${{ matrix.platform }}
     
@@ -27,9 +27,9 @@ jobs:
     
     - name: Install pytests
       run: |
-        pip3 install pytest pytest_mock
+        pip3 install pytest pytest-mock
 
     - name: Test
       run: |
         ls -la
-        pytest test_policy.py -v
+        pytest test_convert.py -v
